@@ -45,6 +45,9 @@ section {
     border: solid 2px var(--color1);
 }
 
+div {
+  
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -117,3 +120,5 @@ footer {
     }
 
   }
+
+  

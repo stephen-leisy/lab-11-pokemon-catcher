@@ -21,6 +21,12 @@ export function setThreePokemon() {
     let pokeTwo = getRandomPokemon();
     let pokeThree = getRandomPokemon();
 
+    while (pokeOne.id === pokeTwo.id || pokeTwo.id === pokeThree.id || pokeOne.id === pokeThree.id) {
+        pokeOne = getRandomPokemon();
+        pokeTwo = getRandomPokemon();
+        pokeThree = getRandomPokemon();
+    }
+
 
     const img1 = matchPokeImage(pokeOne);
     const img2 = matchPokeImage(pokeTwo);
