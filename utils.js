@@ -27,7 +27,9 @@ export function incrementEncounterCounter(id) {
     const specificPoke = findPokemonByID(stats, id);
 
     if (!specificPoke) {
+        const boogerPokemon = findPokemonByID(pokemon, id);
         const newPokeStat = {
+            name: boogerPokemon.pokebase,
             id: id,
             seen: 1,
             caught: 0,
