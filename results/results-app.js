@@ -1,5 +1,8 @@
 import { findPokemonByID } from '../app-utils.js';
 import { getPokeStats } from '../utils.js';
+import { makeCaughtArray, makeNameArray, makeSeenArray } from './munge-utils.js';
+
+const pokeStats = getPokeStats();
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, { //eslint-disable-line
@@ -8,13 +11,21 @@ var chart = new Chart(ctx, { //eslint-disable-line
 
     // The data for our dataset
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
+        labels: makeNameArray(pokeStats),
+        datasets: [
+            {
+                label: `times seen`,
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: makeSeenArray(pokeStats)
+            },
+            {
+                label: 'times caught',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: makeCaughtArray(pokeStats)
+            }
+        ]
     },
 
     // Configuration options go here
