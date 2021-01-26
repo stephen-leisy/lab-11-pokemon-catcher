@@ -46,7 +46,14 @@ section {
 }
 
 div {
-  
+    height: 600px;
+    width: 600px;
+}
+
+.poke-class {
+    height: 300 px;
+    width: 300px;
+}
 
 header {
     display: flex;
