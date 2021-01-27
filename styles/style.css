@@ -18,8 +18,8 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    font-family: font-family: 'Press Start 2P', cursive;
+    background-color: gray;
 }
 
 main {
@@ -28,6 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color:gray;
 }
 
 section {
@@ -43,6 +44,20 @@ section {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
+}
+
+div {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.poke-class {
+    height: 200 px;
+    width: 200px;
 }
 
 header {
@@ -86,6 +101,14 @@ content {
 
 p {
     margin: var(--gutter);
+    font-family: 'Press Start 2P', cursive;
+}
+button {
+    font-family: 'Press Start 2P', cursive;
+}
+
+canvas {
+    font-family: 'Press Start 2P', cursive;
 }
   
 footer {
