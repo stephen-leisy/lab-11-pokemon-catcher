@@ -15,30 +15,50 @@ var chart = new Chart(ctx, { //eslint-disable-line
         datasets: [
             {
                 label: `times seen`,
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'pink',
+                borderColor: '#00a896',
+                borderWidth: 2,
                 data: makeSeenArray(pokeStats)
             },
             {
                 label: 'times caught',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: '#caffbf',
+                borderColor: '#ffacc5',
+                borderWidth: 2,
                 data: makeCaughtArray(pokeStats)
             }
         ]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }],
+            // create x axis with step size 1 to show integers instead of ugly decimals
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }]
+        }
+
+    }
 });
 
-// const results = getPokeStats();
-// console.log(results);
-// const resultsDiv = document.getElementById('results-window');
-// const header = document.createElement('h1');
-// header.textContent = `You caught and saw these Pokemon`;
+const refreshButton = document.getElementById('clear-session-button');
 
-// resultsDiv.append(header);
+refreshButton.addEventListener('click', () => {
+    localStorage.clear(pokeStats);
+    window.location = '../index.html';
+});
+
+
 
 
 
