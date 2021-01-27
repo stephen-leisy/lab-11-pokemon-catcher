@@ -1,5 +1,5 @@
 import { findPokemonByID } from '../app-utils.js';
-import { getPokeStats } from '../utils.js';
+import { getPokeStats, setAllTimeStats } from '../utils.js';
 import { makeCaughtArray, makeNameArray, makeSeenArray } from './munge-utils.js';
 
 const pokeStats = getPokeStats();
@@ -57,7 +57,8 @@ refreshButton.textContent = `REFRESH YOUR CATCH`;
 const resultDiv = document.getElementById('results-window');
 
 refreshButton.addEventListener('click', () => {
-    localStorage.clear(pokeStats);
+    setAllTimeStats(pokeStats);
+    localStorage.removeItem('POKESTATS', []);
     window.location = '../index.html';
 });
 
