@@ -2,7 +2,6 @@ import { findPokemonByID } from './app-utils.js';
 import pokemon from './data.js';
 
 const POKESTATS = 'POKESTATS';
-const ALLTIMESTATS = 'ALLTIMESTAS';
 
 export function getPokeStats() {
 
@@ -16,25 +15,12 @@ export function getPokeStats() {
 
 }
 
-export function getAllTimeStats() {
-    let stats = JSON.parse(localStorage.getItem(ALLTIMESTATS));
-    if (!stats) {
-        stats = [];
-        const stringyPokeStats = JSON.stringify(ALLTIMESTATS);
-        localStorage.setItem([], stringyPokeStats);
-    }
-    return stats;
-}
 
 export function setPokeStats(newStats) {
     let newStringStats = JSON.stringify(newStats);
     localStorage.setItem(POKESTATS, newStringStats);
 }
 
-export function setAllTimeStats(pokeStats) {
-    let stringPokeStats = JSON.stringify(pokeStats);
-    localStorage.setItem(ALLTIMESTATS, stringPokeStats);
-}
 export function incrementEncounterCounter(id) {
     const stats = getPokeStats();
 

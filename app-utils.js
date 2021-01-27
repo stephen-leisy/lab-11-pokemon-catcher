@@ -1,5 +1,5 @@
 import pokemon from './data.js';
-import { caughtCounter, incrementEncounterCounter } from '/utils.js';
+import { caughtCounter, incrementEncounterCounter } from './utils.js';
 
 let gameCounter = 0;
 

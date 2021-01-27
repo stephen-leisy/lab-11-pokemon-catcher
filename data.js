@@ -461,7 +461,7 @@ export default [
         'pokebase': 'pidgey',
         'pokedex': 'http://www.pokemon.com/us/pokedex/pidgey'
     }
-]
+];
 // © 2021 GitHub, Inc.
 //     Terms
 // Privacy
