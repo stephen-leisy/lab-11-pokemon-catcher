@@ -51,12 +51,17 @@ var chart = new Chart(ctx, { //eslint-disable-line
     }
 });
 
-const refreshButton = document.getElementById('clear-session-button');
+// const refreshButton = document.getElementById('clear-session-button');
+const refreshButton = document.createElement('button');
+refreshButton.textContent = `REFRESH YOUR CATCH`;
+const resultDiv = document.getElementById('results-window');
 
 refreshButton.addEventListener('click', () => {
     localStorage.clear(pokeStats);
     window.location = '../index.html';
 });
+
+resultDiv.append(refreshButton);
 
 
 
