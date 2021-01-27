@@ -63,22 +63,3 @@ export function caughtCounter(id) {
     specificPoke.caught++;
     setPokeStats(stats);
 }
-export function returnTotalPlays(games) {
-    getPokeStats();
-    const allTimeArray = [];
-    for (let game of games) {
-        for (const pokemon of game) {
-            const totalItem = findPokemonByID(allTimeArray, pokemon.id);
-            if (!totalItem) {
-                allTimeArray.push(pokemon);
-            } else {
-                totalItem.seen += pokemon.seen;
-                totalItem.caught += pokemon.caught;
-            }
-
-        }
-
-    }
-    return allTimeArray;
-}
-console.log('hello world');

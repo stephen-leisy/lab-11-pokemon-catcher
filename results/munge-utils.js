@@ -27,3 +27,4 @@ export function makeNameArray(resultsArray) {
     }
     return nameArray;
 }
+
