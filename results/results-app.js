@@ -1,4 +1,3 @@
-import { findPokemonByID } from '../app-utils.js';
 import { getPokeStats } from '../utils.js';
 import { makeCaughtArray, makeNameArray, makeSeenArray } from './munge-utils.js';
 
