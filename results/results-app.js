@@ -1,8 +1,9 @@
 import { findPokemonByID } from '../app-utils.js';
-import { getPokeStats, setAllTimeStats } from '../utils.js';
+import { getPokeStats } from '../utils.js';
 import { makeCaughtArray, makeNameArray, makeSeenArray } from './munge-utils.js';
 
 const pokeStats = getPokeStats();
+
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, { //eslint-disable-line
@@ -54,10 +55,12 @@ var chart = new Chart(ctx, { //eslint-disable-line
 // const refreshButton = document.getElementById('clear-session-button');
 const refreshButton = document.createElement('button');
 refreshButton.textContent = `REFRESH YOUR CATCH`;
+
 const resultDiv = document.getElementById('results-window');
 
+
+
 refreshButton.addEventListener('click', () => {
-    setAllTimeStats(pokeStats);
     localStorage.removeItem('POKESTATS', []);
     window.location = '../index.html';
 });
